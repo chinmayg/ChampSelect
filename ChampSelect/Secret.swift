@@ -10,6 +10,6 @@ import Foundation
 
 struct Key {
     struct Riot{
-        static let API = "XXXX-XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+        static let API = "XXXX-XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX"
     }
 }
