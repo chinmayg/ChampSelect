@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74402B69208728CA00210EF3 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74402B68208728CA00210EF3 /* Secret.swift */; };
 		74A693002082B71100337900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A692FF2082B71100337900 /* AppDelegate.swift */; };
 		74A693022082B71100337900 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A693012082B71100337900 /* SearchViewController.swift */; };
 		74A693052082B71100337900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A693032082B71100337900 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		5B32F28AE64EC2C6B232460C /* Pods-ChampSelect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChampSelect.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChampSelect/Pods-ChampSelect.release.xcconfig"; sourceTree = "<group>"; };
+		74402B68208728CA00210EF3 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		74A692FC2082B71100337900 /* ChampSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChampSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A692FF2082B71100337900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A693012082B71100337900 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				74A692FF2082B71100337900 /* AppDelegate.swift */,
+				74402B68208728CA00210EF3 /* Secret.swift */,
 				74A693182082BCAE00337900 /* Model */,
 				74A693142082B74400337900 /* Controller */,
 				74A693152082B77500337900 /* View */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A6931A2082BCC000337900 /* Champion.swift in Sources */,
+				74402B69208728CA00210EF3 /* Secret.swift in Sources */,
 				74A693022082B71100337900 /* SearchViewController.swift in Sources */,
 				74A693172082BBEB00337900 /* ChampionViewController.swift in Sources */,
 				74A693002082B71100337900 /* AppDelegate.swift in Sources */,
@@ -403,7 +407,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D859KWMJCQ;
 				INFOPLIST_FILE = ChampSelect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ghotkar.ChampSelect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -419,7 +426,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D859KWMJCQ;
 				INFOPLIST_FILE = ChampSelect/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ghotkar.ChampSelect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

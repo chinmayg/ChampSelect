@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchViewController: UIViewController {
-
+    
+    let champ_list : String = "https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=all&dataById=false&api_key="
+    let champ_detail : String = "https://na1.api.riotgames.com/lol/static-data/v3/champions/{}?locale=en_US&tags=all&api_key="
+    
     @IBOutlet weak var championSearchBar: UITextField!
     
     override func viewDidLoad() {
@@ -24,6 +28,10 @@ class SearchViewController: UIViewController {
 
     @IBAction func searchButtonClicked(_ sender: Any) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(Key.Riot.API)
     }
     
 }
