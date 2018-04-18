@@ -67,4 +67,4 @@ fastlane/screenshots
 fastlane/test_output
 
 # Ignore file Secret
-ChampSelect/ChampSelect/Secret.swift
+/ChampSelect/ChampSelect/Secret.swift
