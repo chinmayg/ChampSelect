@@ -8,23 +8,24 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SearchViewController: UIViewController {
     
-    let CurrentVersion = "1.0"
+    var currentVersion = "1.0"
     
     @IBOutlet weak var championSearchBar: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Trigger an HTTP Request to get all version numbers
+        // TODO: Need to figure out how to chain multiple HTTP Request
         
-        // TODO: Find the currrent version (First element of the json)
+        // TODO: Trigger an HTTP Request to get all version numbers
+        getVersionDataHTTPRequest()
         
         // TODO: Trigger an HTTP Request to get all champion data if the version has changed
-        
-        // TODO: Convert JSON into CoreData database
+        getStaticChampionDataHTTPRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,38 +41,35 @@ class SearchViewController: UIViewController {
         
     }
     
-    // MARK: - Functions to generate REST API URLs
-    
-    // Static Data on All Champions that doesnt have a limit for API calls
-    
-    func generateURLforAllChampionData(with currentVersion : Int) -> String {
-        return "http://ddragon.leagueoflegends.com/cdn/\(currentVersion)/data/en_US/champion.json"
-    }
-    
-    // Get detailed information about a specifc Champion
-    
-    func generateURLforSpecificChampionData(with championId : Int) -> String {
-        return "https://na1.api.riotgames.com/lol/static-data/v3/champions/\(championId)?locale=en_US&champData=allytips&champData=enemytips&champData=passive&champData=spells&api_key=\(Key.Riot.API)"
-    }
-    
-    // Current Version number will be the first element in JSON"
-    func generateURLforVersionNumber() -> String {
-        return "https://ddragon.leagueoflegends.com/api/versions.json"
-    }
-    
     // MARK: - Trigger HTTP Request
-    func triggerHTTPRequest(with url: String) {
-        Alamofire.request(url).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+    
+    // HTTP Request to get all the version numbers for the game
+    func getVersionDataHTTPRequest() {
+        Alamofire.request(versionDataURL).responseJSON { response in
+            if response.result.isSuccess {
+                if let json = response.result.value {
+                    //print("JSON: \(json)") // serialized json response
+                    let versionJSON = JSON(json)
+                    
+                    // TODO: Find the currrent version (First element of the json)
+                    self.currentVersion = versionJSON[0].stringValue
+                    
+                    print(self.currentVersion)
+                }
             }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
+        }
+    }
+    
+    // HTTP Request to get all champion data request
+    func getStaticChampionDataHTTPRequest() {
+        Alamofire.request(generateURLforAllChampionData(withVersion: currentVersion)).responseJSON { response in
+            if response.result.isSuccess {
+                if let json = response.result.value {
+                    let allChampionJSON = JSON(json)
+                    print(allChampionJSON)
+                    
+                    // TODO: Covert JSON to database
+                }
             }
         }
     }
