@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        championSearchBar.clearsOnBeginEditing = true
         // find the sqlite database
         let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
