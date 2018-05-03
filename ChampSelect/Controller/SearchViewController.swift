@@ -24,9 +24,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         championSearchBar.clearsOnBeginEditing = true
         // find the sqlite database
-        let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        //let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
-        print(dataFilePath)
+        //print(dataFilePath)
         // context from the container
         context = appDelegate.persistentContainer.viewContext
         
@@ -36,7 +36,7 @@ class SearchViewController: UIViewController {
         //getVersionDataHTTPRequest()
         
         // MARK: Trigger an HTTP Request to get all champion data if the version has changed
-        getStaticChampionDataHTTPRequest()
+        //getStaticChampionDataHTTPRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +45,15 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func searchButtonClicked(_ sender: Any) {
-        // Todo: Trigger an HTTP Request to get detailed champion info
-        print(findChampionInData(withChampionName: championSearchBar.text!))
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "segueToChampionInfo" {
+            if let destinationVC = segue.destination as? ChampionViewController {
+                destinationVC.championId = findChampionInData(withChampionName: championSearchBar.text!)
+            }
+        }
     }
     
     // MARK: - Trigger HTTP Request
@@ -126,7 +129,7 @@ class SearchViewController: UIViewController {
     
     // query the core data table for the champion name
     func findChampionInData(withChampionName: String) -> String {
-        print(withChampionName)
+        //print(withChampionName)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Champion")
         request.predicate = NSPredicate(format: "name = %@", withChampionName.lowercased())
@@ -137,7 +140,7 @@ class SearchViewController: UIViewController {
             for data in result as! [NSManagedObject] {
                 let championName = data.value(forKey: "name") as! String
                 let championID = data.value(forKey: "champId") as! String
-                print(championName)
+                //print(championName)
                 return championID
             }
         } catch {

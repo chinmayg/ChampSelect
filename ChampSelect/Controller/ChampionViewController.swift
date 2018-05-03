@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ChampionViewController: UIViewController {
 
+
+class ChampionViewController: UIViewController {
+    
+    var championId : String = "0" // This value will be set by previous view controller
+    @IBOutlet weak var tempChampionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tempChampionLabel.text = championId
         // Do any additional setup after loading the view.
     }
 
