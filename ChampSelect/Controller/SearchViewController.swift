@@ -23,6 +23,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // find the sqlite database
+        let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        print(dataFilePath)
         // context from the container
         context = appDelegate.persistentContainer.viewContext
         
@@ -42,6 +46,7 @@ class SearchViewController: UIViewController {
 
     @IBAction func searchButtonClicked(_ sender: Any) {
         // Todo: Trigger an HTTP Request to get detailed champion info
+        print(findChampionInData(withChampionName: championSearchBar.text!))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,11 +88,10 @@ class SearchViewController: UIViewController {
                         //print(subChampionJson)
                         
                         // add champion to core data
-                        self.addChampionData(withName: subChampionJson["name"].string!, withChampionID: subChampionJson["key"].string!)
+                        self.addChampionData(withName: subChampionJson["name"].string!.lowercased(), withChampionID: subChampionJson["key"].string!)
+                        // save core data
+                        self.saveData()
                     }
-                    
-                    // save core data
-                    self.saveData()
                 }
             }
         }
@@ -118,6 +122,29 @@ class SearchViewController: UIViewController {
         } catch {
             print("Failed saving")
         }
+    }
+    
+    // query the core data table for the champion name
+    func findChampionInData(withChampionName: String) -> String {
+        print(withChampionName)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Champion")
+        request.predicate = NSPredicate(format: "name = %@", withChampionName.lowercased())
+        
+        do {
+            let result = try context?.fetch(request)
+
+            for data in result as! [NSManagedObject] {
+                let championName = data.value(forKey: "name") as! String
+                let championID = data.value(forKey: "champId") as! String
+                print(championName)
+                return championID
+            }
+        } catch {
+            print("Couldnt find the champion name")
+        }
+        
+        return ""
     }
     
 }
