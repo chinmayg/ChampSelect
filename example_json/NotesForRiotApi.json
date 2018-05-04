@@ -1,0 +1,308 @@
+# Summoner information
+
+Request URL:
+https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/dachimneysweep
+
+Request Header:
+{
+    "Origin": "https://developer.riotgames.com",
+    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    "X-Riot-Token": "RGAPI-469ecf24-6ae2-417e-923f-3172567bc7af",
+    "Accept-Language": "en-US,en;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+}
+
+Response Header:
+{
+    "Content-Length": "134",
+    "X-App-Rate-Limit-Count": "1:120,1:1",
+    "Content-Encoding": "gzip",
+    "X-Method-Rate-Limit-Count": "1:10,1:600",
+    "Vary": "Accept-Encoding",
+    "Connection": "keep-alive",
+    "X-App-Rate-Limit": "100:120,20:1",
+    "X-Method-Rate-Limit": "20000:10,1200000:600",
+    "X-NewRelic-App-Data": "PxQFWFFSDwQTV1hXBggDV1QTGhE1AwE2QgNWEVlbQFtcC2VOchRAFgtba04hJmweQxEMD1hfUhRJRwUeBQMXIEkxTQ9VV1pXQStYDFRDH1JKBhtRSFMKBwRSUlsOBxtLVR0UVQNRVlcEAAxSCwkMAFUGX0MdB1IOF1Nq",
+    "Date": "Wed, 09 8 2017  23:15:47 GMT",
+    "Content-Type": "application/json;charset=utf-8"
+}
+
+Response
+{
+    "profileIconId": 2090,
+    "name": "DaChimneySweep",
+    "summonerLevel": 30,
+    "accountId": 44282842,
+    "id": 30065735,
+    "revisionDate": 1502252071000
+}
+
+# Match history
+
+Request URL:
+https://na1.api.riotgames.com/lol/match/v3/matchlists/by-account/44282842/recent
+
+Request Header:
+{
+    "Origin": "https://developer.riotgames.com",
+    "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    "X-Riot-Token": "RGAPI-469ecf24-6ae2-417e-923f-3172567bc7af",
+    "Accept-Language": "en-US,en;q=0.8",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+}
+
+Response Header:
+{
+    "Content-Length": "514",
+    "Access-Control-Allow-Headers": "Content-Type,Authorization,Region",
+    "Content-Encoding": "gzip",
+    "X-Method-Rate-Limit-Count": "1:10",
+    "Connection": "keep-alive",
+    "X-App-Rate-Limit": "100:120,20:1",
+    "X-Method-Rate-Limit": "1000:10",
+    "X-NewRelic-App-Data": "PxQFWFFSDwQTV1hXBggDV1QTGhE1AwE2QgNWEVlbQFtcC2VOchRAFgtba04hJmweXQUVAV8cQVVJVlNHMAMAB14WdQNMW1xeWhZNQx1RHVJIBhlRXlYBBgdITFMbEwcEVQUCAFJSUgdUA1sGCgsWHlUEVRJUPA==",
+    "X-App-Rate-Limit-Count": "1:120,1:1",
+    "Date": "Wed, 09 Aug 2017 23:18:10 GMT",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+    "Content-Type": "application/json;charset=utf-8"
+}
+
+Response
+{
+    "matches": [
+        {
+            "lane": "JUNGLE",
+            "gameId": 2568016794,
+            "champion": 19,
+            "platformId": "NA1",
+            "timestamp": 1502248865592,
+            "queue": 420,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2568010167,
+            "champion": 18,
+            "platformId": "NA1",
+            "timestamp": 1502245928829,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2567938577,
+            "champion": 18,
+            "platformId": "NA1",
+            "timestamp": 1502244501157,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2567441782,
+            "champion": 111,
+            "platformId": "NA1",
+            "timestamp": 1502162975279,
+            "queue": 420,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2567384043,
+            "champion": 79,
+            "platformId": "NA1",
+            "timestamp": 1502159531844,
+            "queue": 400,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2567309752,
+            "champion": 22,
+            "platformId": "NA1",
+            "timestamp": 1502152524200,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2567282424,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1502149595730,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2566405813,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1502066684672,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2566368947,
+            "champion": 19,
+            "platformId": "NA1",
+            "timestamp": 1502063879220,
+            "queue": 420,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2566346607,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1502061827064,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2566360776,
+            "champion": 51,
+            "platformId": "NA1",
+            "timestamp": 1502059361860,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2566304366,
+            "champion": 421,
+            "platformId": "NA1",
+            "timestamp": 1502055394554,
+            "queue": 400,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "MID",
+            "gameId": 2566024099,
+            "champion": 245,
+            "platformId": "NA1",
+            "timestamp": 1501999868029,
+            "queue": 420,
+            "role": "SOLO",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2566031229,
+            "champion": 15,
+            "platformId": "NA1",
+            "timestamp": 1501998194416,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2565958827,
+            "champion": 19,
+            "platformId": "NA1",
+            "timestamp": 1501995769369,
+            "queue": 420,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2565963306,
+            "champion": 22,
+            "platformId": "NA1",
+            "timestamp": 1501993738894,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2565903038,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1501988654760,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "JUNGLE",
+            "gameId": 2565857810,
+            "champion": 19,
+            "platformId": "NA1",
+            "timestamp": 1501986072492,
+            "queue": 420,
+            "role": "NONE",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2565852987,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1501983542375,
+            "queue": 420,
+            "role": "DUO_CARRY",
+            "season": 9
+        },
+        {
+            "lane": "BOTTOM",
+            "gameId": 2565167479,
+            "champion": 498,
+            "platformId": "NA1",
+            "timestamp": 1501919332456,
+            "queue": 400,
+            "role": "DUO_CARRY",
+            "season": 9
+        }
+    ],
+    "endIndex": 20,
+    "startIndex": 0,
+    "totalGames": 20
+}
+
+# Champion Information
+
+for example:
+{
+    "lane": "BOTTOM",
+    "gameId": 2565167479,
+    "champion": 498,
+    "platformId": "NA1",
+    "timestamp": 1501919332456,
+    "queue": 400,
+    "role": "DUO_CARRY",
+    "season": 9
+}
+
+Static value is 498, need to compare with champion.json file
+
+"Warwick":{
+    "version":"6.24.1",
+    "id":"Warwick",
+    "key":"19",
+    "name":"Warwick",
+    "title":"the Blood Hunter",
+    "blurb":"Warwick was once a man revered for his ability to track down human specimens for the darkest types of scientific research. When his ambitions exceeded his physical limits, he drank a dangerous elixir to transform himself into an unstoppable manhunter. ...",
+    "info":{
+        "attack":7,
+        "defense":4,
+        "magic":4,
+        "difficulty":3
+    },
