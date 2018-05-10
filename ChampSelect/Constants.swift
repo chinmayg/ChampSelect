@@ -18,7 +18,7 @@ func generateURLforAllChampionData(withVersion currentVersion : String) -> Strin
 
 // Get detailed information about a specifc Champion
 
-func generateURLforSpecificChampionData(withId championId : Int) -> String {
+func generateURLforSpecificChampionData(withId championId : String) -> String {
     return "https://na1.api.riotgames.com/lol/static-data/v3/champions/\(championId)?locale=en_US&champData=allytips&champData=enemytips&champData=passive&champData=spells&api_key=\(Key.Riot.API)"
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742CD2FF20A3DBED00499980 /* ChampAbilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742CD2FD20A3DBED00499980 /* ChampAbilityCell.swift */; };
+		742CD30020A3DBED00499980 /* ChampAbilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 742CD2FE20A3DBED00499980 /* ChampAbilityCell.xib */; };
 		74402B69208728CA00210EF3 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74402B68208728CA00210EF3 /* Secret.swift */; };
 		74A693002082B71100337900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A692FF2082B71100337900 /* AppDelegate.swift */; };
 		74A693022082B71100337900 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A693012082B71100337900 /* SearchViewController.swift */; };
@@ -15,12 +17,16 @@
 		74A6930A2082B71200337900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A693092082B71200337900 /* Assets.xcassets */; };
 		74A6930D2082B71200337900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A6930B2082B71200337900 /* LaunchScreen.storyboard */; };
 		74A693172082BBEB00337900 /* ChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A693162082BBEB00337900 /* ChampionViewController.swift */; };
+		74D190A320A3E58E004FC6B2 /* example_json in Resources */ = {isa = PBXBuildFile; fileRef = 74D190A220A3E58E004FC6B2 /* example_json */; };
+		74D190A520A3E5C0004FC6B2 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D190A420A3E5C0004FC6B2 /* Ability.swift */; };
 		74FE3FF1208EADFA00D064DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FE3FF0208EADFA00D064DD /* Constants.swift */; };
 		7BCBA962333B861F53E83E9A /* Pods_ChampSelect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC135639E73F4CF81A13543B /* Pods_ChampSelect.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B32F28AE64EC2C6B232460C /* Pods-ChampSelect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChampSelect.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChampSelect/Pods-ChampSelect.release.xcconfig"; sourceTree = "<group>"; };
+		742CD2FD20A3DBED00499980 /* ChampAbilityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampAbilityCell.swift; sourceTree = "<group>"; };
+		742CD2FE20A3DBED00499980 /* ChampAbilityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChampAbilityCell.xib; sourceTree = "<group>"; };
 		74402B68208728CA00210EF3 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		74A692FC2082B71100337900 /* ChampSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChampSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A692FF2082B71100337900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +37,8 @@
 		74A6930C2082B71200337900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A6930E2082B71200337900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A693162082BBEB00337900 /* ChampionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionViewController.swift; sourceTree = "<group>"; };
+		74D190A220A3E58E004FC6B2 /* example_json */ = {isa = PBXFileReference; lastKnownFileType = folder; name = example_json; path = ChampSelect/example_json; sourceTree = SOURCE_ROOT; };
+		74D190A420A3E5C0004FC6B2 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ability.swift; path = ChampSelect/Model/Ability.swift; sourceTree = SOURCE_ROOT; };
 		74FE3FF0208EADFA00D064DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BC135639E73F4CF81A13543B /* Pods_ChampSelect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChampSelect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC0559A69D401B4B6A29285 /* Pods-ChampSelect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChampSelect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChampSelect/Pods-ChampSelect.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +73,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		742CD2FA20A3DB5500499980 /* Champ Ability Cell */ = {
+			isa = PBXGroup;
+			children = (
+				742CD2FD20A3DBED00499980 /* ChampAbilityCell.swift */,
+				742CD2FE20A3DBED00499980 /* ChampAbilityCell.xib */,
+			);
+			path = "Champ Ability Cell";
+			sourceTree = "<group>";
+		};
+		742CD30120A3DF9000499980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74D190A420A3E5C0004FC6B2 /* Ability.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		74A692F32082B71100337900 = {
 			isa = PBXGroup;
 			children = (
@@ -89,12 +115,13 @@
 				74A692FF2082B71100337900 /* AppDelegate.swift */,
 				74402B68208728CA00210EF3 /* Secret.swift */,
 				74FE3FF0208EADFA00D064DD /* Constants.swift */,
+				742CD30120A3DF9000499980 /* Model */,
 				74A693142082B74400337900 /* Controller */,
 				74A693152082B77500337900 /* View */,
 				74A693092082B71200337900 /* Assets.xcassets */,
-				74A6930B2082B71200337900 /* LaunchScreen.storyboard */,
 				74A6930E2082B71200337900 /* Info.plist */,
 				74A693062082B71100337900 /* ChampSelect.xcdatamodeld */,
+				74D190A220A3E58E004FC6B2 /* example_json */,
 			);
 			path = ChampSelect;
 			sourceTree = "<group>";
@@ -111,6 +138,8 @@
 		74A693152082B77500337900 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				742CD2FA20A3DB5500499980 /* Champ Ability Cell */,
+				74A6930B2082B71200337900 /* LaunchScreen.storyboard */,
 				74A693032082B71100337900 /* Main.storyboard */,
 			);
 			path = View;
@@ -177,6 +206,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742CD30020A3DBED00499980 /* ChampAbilityCell.xib in Resources */,
+				74D190A320A3E58E004FC6B2 /* example_json in Resources */,
 				74A6930D2082B71200337900 /* LaunchScreen.storyboard in Resources */,
 				74A6930A2082B71200337900 /* Assets.xcassets in Resources */,
 				74A693052082B71100337900 /* Main.storyboard in Resources */,
@@ -246,11 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742CD2FF20A3DBED00499980 /* ChampAbilityCell.swift in Sources */,
 				74402B69208728CA00210EF3 /* Secret.swift in Sources */,
 				74A693022082B71100337900 /* SearchViewController.swift in Sources */,
 				74A693172082BBEB00337900 /* ChampionViewController.swift in Sources */,
 				74FE3FF1208EADFA00D064DD /* Constants.swift in Sources */,
 				74A693002082B71100337900 /* AppDelegate.swift in Sources */,
+				74D190A520A3E5C0004FC6B2 /* Ability.swift in Sources */,
 				74A693082082B71100337900 /* ChampSelect.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
