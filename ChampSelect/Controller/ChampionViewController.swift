@@ -64,6 +64,7 @@ class ChampionViewController: UIViewController, UITableViewDataSource, UITableVi
                     
                     // Get Passive
                     let passiveSubJSON = championJSON["passive"]
+                    //print(passiveSubJSON)
                     let newAbility = Ability()
                     newAbility.abilityName = passiveSubJSON["name"].string!
                     newAbility.abilityDesc = passiveSubJSON["description"].string!
@@ -73,9 +74,10 @@ class ChampionViewController: UIViewController, UITableViewDataSource, UITableVi
                    
                     let spellSubJSON = championJSON["spells"]
                     
-                    for index in 0...4 {
+                    for index in 0...3 {
                         for (_, spellJSON):(String, JSON) in spellSubJSON[index]{
                             print("*****************SPELL \(index) ***************")
+                            print(spellJSON)
                             let newAbility = Ability()
                             newAbility.abilityName = spellJSON["name"].string!
                             newAbility.abilityDesc = spellJSON["description"].string!

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     
     var currentVersion = "8.9.1" // Manually Change until I get Promise Pattern working
     // created a reference to app delegate to the context for the persistent container
+    var championID = ""
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context : NSManagedObjectContext?
     
@@ -45,13 +46,32 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func searchButtonClicked(_ sender: Any) {
+    }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "segueToChampionInfo" {
+            
+            // Check to see if champion is in core data database
+            championID = findChampionInData(withChampionName: championSearchBar.text!)
+            if championID == "" {
+                // if champion is not database, an alert will pop up notifying user
+                let alert = UIAlertController(title: "", message: "The name provided is not a champion!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return false
+            } else {
+                // Otherwise segue
+                return true
+            }
+        }
+        
+        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToChampionInfo" {
             if let destinationVC = segue.destination as? ChampionViewController {
-                destinationVC.championId = findChampionInData(withChampionName: championSearchBar.text!)
+                destinationVC.championId = championID
             }
         }
     }
@@ -138,7 +158,6 @@ class SearchViewController: UIViewController {
             let result = try context?.fetch(request)
 
             for data in result as! [NSManagedObject] {
-                let championName = data.value(forKey: "name") as! String
                 let championID = data.value(forKey: "champId") as! String
                 //print(championName)
                 return championID
