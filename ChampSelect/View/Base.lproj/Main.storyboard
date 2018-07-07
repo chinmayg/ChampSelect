@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dup-z2-HDg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dup-z2-HDg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champ Select" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1V-ih-0dI">
-                                <rect key="frame" x="72" y="227.66666666666666" width="270.33333333333331" height="53.999999999999972"/>
+                                <rect key="frame" x="72" y="227.66666666666666" width="270" height="53.999999999999972"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                                 <color key="backgroundColor" red="0.1137254902" green="0.60784313729999995" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0O3-Mi-LhA"/>
-                                    <constraint firstAttribute="width" constant="277" id="z5W-ZL-6m6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="277" id="z5W-ZL-6m6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="Search!">
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="68.666666666666686" y="353" width="277" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1qd-fQ-SsV"/>
-                                    <constraint firstAttribute="width" constant="277" id="RuB-tV-iTF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="277" id="RuB-tV-iTF"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -83,12 +83,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-Li-jGd" userLabel="ChampionAbilityTable">
-                                <rect key="frame" x="0.0" y="122" width="414" height="307"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-Li-jGd" userLabel="ChampionAbilityTable">
+                                <rect key="frame" x="0.0" y="64" width="414" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AbilityCell" id="Km5-MV-OpA" customClass="ChampAbilityCell" customModule="ChampSelect" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AbilityCell" id="Km5-MV-OpA" customClass="ChampAbilityCell" customModule="ChampSelect">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Km5-MV-OpA" id="OfL-O1-Xgk" customClass="ChampAbilityCell" customModule="ChampSelect" customModuleProvider="target">
@@ -98,25 +97,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-DX-YA4" userLabel="ChampionName">
-                                <rect key="frame" x="174" y="80" width="67" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aUf-Li-jGd" firstAttribute="leading" secondItem="170-l1-FBf" secondAttribute="leading" id="Gj1-uI-Ptq"/>
+                            <constraint firstItem="170-l1-FBf" firstAttribute="bottom" secondItem="aUf-Li-jGd" secondAttribute="bottom" constant="180" id="dKy-kM-cBO"/>
+                            <constraint firstItem="aUf-Li-jGd" firstAttribute="top" secondItem="170-l1-FBf" secondAttribute="top" id="eet-m3-F4s"/>
+                            <constraint firstItem="aUf-Li-jGd" firstAttribute="trailing" secondItem="170-l1-FBf" secondAttribute="trailing" id="no7-WO-iLh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="170-l1-FBf"/>
                     </view>
                     <connections>
                         <outlet property="championAbilityTable" destination="aUf-Li-jGd" id="CBa-re-1ea"/>
-                        <outlet property="championNameLabel" destination="aeo-DX-YA4" id="vpa-ZM-Mfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ws3-eF-SYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910.144927536232" y="132.88043478260872"/>
+            <point key="canvasLocation" x="3306" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BM3-ip-V8S">

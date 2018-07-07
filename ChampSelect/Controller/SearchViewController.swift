@@ -37,7 +37,7 @@ class SearchViewController: UIViewController {
         //getVersionDataHTTPRequest()
         
         // MARK: Trigger an HTTP Request to get all champion data if the version has changed
-        //getStaticChampionDataHTTPRequest()
+        getStaticChampionDataHTTPRequest()
     }
 
     override func didReceiveMemoryWarning() {

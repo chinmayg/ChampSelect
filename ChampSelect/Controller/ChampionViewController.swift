@@ -13,10 +13,10 @@ import SwiftyJSON
 class ChampionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var abilityArray : [Ability] = [Ability]()
-    var abilityKeyBind : [String] = ["P", "Q", "W", "E","R"]
+    var abilityKeyBind : [String] = ["Passive", "Q", "W", "E","R"]
     var championId : String = "0" // This value will be set by previous view controller
 
-    @IBOutlet weak var championNameLabel: UILabel!
+    //@IBOutlet weak var championNameLabel: UILabel!
     @IBOutlet weak var championAbilityTable: UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +27,11 @@ class ChampionViewController: UIViewController, UITableViewDataSource, UITableVi
         championAbilityTable.delegate = self
         championAbilityTable.dataSource = self
         
-        championNameLabel.adjustsFontSizeToFitWidth = true
+        //championNameLabel.adjustsFontSizeToFitWidth = true
+        
+        //TODO: Register your ChampAbilityCell.xib file here:
+        championAbilityTable.register(UINib(nibName : "ChampAbilityCell", bundle: nil), forCellReuseIdentifier: "customAbilityCell")
+        configureTableView()
         
         getChampionDataWithHTTPReqest()
     }
@@ -58,12 +62,17 @@ class ChampionViewController: UIViewController, UITableViewDataSource, UITableVi
         Alamofire.request(generateURLforSpecificChampionData(withId: championId)).responseJSON { response in
             if response.result.isSuccess {
                 if let json = response.result.value {
+                    
                     let championJSON = JSON(json)
                     //print(championJSON)
-                    self.championNameLabel.text = championJSON["name"].string
+                    //self.championNameLabel.text = championJSON["name"].string
+                    self.navigationItem.title = championJSON["name"].string
                     
                     // Get Passive
                     let passiveSubJSON = championJSON["passive"]
+                    var abilityName : String = passiveSubJSON["name"].string!
+                    var abilityDesc : String = passiveSubJSON["description"].string!
+                    self.addIntoArrayWith(abilityName: abilityName, abilityDesc: abilityDesc)
                     //print(passiveSubJSON)
                     let newAbility = Ability()
                     newAbility.abilityName = passiveSubJSON["name"].string!
@@ -75,21 +84,34 @@ class ChampionViewController: UIViewController, UITableViewDataSource, UITableVi
                     let spellSubJSON = championJSON["spells"]
                     
                     for index in 0...3 {
-                        for (_, spellJSON):(String, JSON) in spellSubJSON[index]{
-                            print("*****************SPELL \(index) ***************")
-                            print(spellJSON)
-                            let newAbility = Ability()
-                            newAbility.abilityName = spellJSON["name"].string!
-                            newAbility.abilityDesc = spellJSON["description"].string!
-                            self.abilityArray.append(newAbility)
-                            print(newAbility.abilityName)
-                            print(newAbility.abilityDesc)
-                            print("*****************SPELL \(index) ***************")
-                        }
+                        //print("*****************SPELL \(index) ***************")
+                        abilityName = spellSubJSON[index]["name"].string!
+                        abilityDesc = spellSubJSON[index]["description"].string!
+                        self.addIntoArrayWith(abilityName: abilityName, abilityDesc: abilityDesc)
+                        //print(newAbility.abilityName)
+                        //print(newAbility.abilityDesc)
+                        //print("*****************SPELL \(index) ***************")
                     }
-
+                    
+                    self.championAbilityTable.reloadData()
                 }
             }
         }
+    }
+    
+    // MARK:- Adding abilities into the ability array
+    
+    func addIntoArrayWith(abilityName : String, abilityDesc : String) {
+        let newAbility = Ability()
+        newAbility.abilityName = abilityName
+        newAbility.abilityDesc = abilityDesc
+        abilityArray.append(newAbility)
+    }
+    
+    // Allows for the cells to resize
+    func configureTableView() {
+        championAbilityTable.rowHeight = UITableViewAutomaticDimension
+        championAbilityTable.estimatedRowHeight = 120.0
+        championAbilityTable.reloadData()
     }
 }
